@@ -39,3 +39,32 @@ function functionUsingFilter(filterName) {
     console.log(filterOP);
 
 }
+
+//using map
+console.log('usage of map function')
+
+const modifiedArr = sample_data.map((element, index) => {
+    var id = index;
+    var obj = {
+        id: id,
+        name: element.name,
+        age: element.age
+    };
+    return obj
+})
+
+console.log('map function used: ');
+console.log(modifiedArr);
+
+//using reducer: gives a single output from the given array based on the fucntion
+console.log('using reducer');
+const value = sample_data.reduce((element1, element2) => {
+    if(element1.age < element2.age){
+        return element1;
+    }else{
+        return element2;
+    }
+})
+
+console.log('logging the largest age: ')
+console.log(value);
